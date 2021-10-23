@@ -5,7 +5,7 @@ import s from "./ContactsList.module.css";
 export default function ContacstList({ contacts, onDelete }) {
   return (
     <ul className={s.list}>
-      <h6>Contacts list</h6>
+      {contacts.length === 0 ? <h6>Contacts list is empty.</h6> : <h6>Contacts list:</h6>}
         {contacts.map(({id, name, number}) => (
           <li
             key={id}
@@ -36,4 +36,3 @@ ContacstList.propTypes = {
 };
 
 
-//(e) => onDelete(e.currentTarget.parentNode.id)
